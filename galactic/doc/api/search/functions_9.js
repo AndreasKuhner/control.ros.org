@@ -10,5 +10,5 @@ var searchData=
   ['load_5fcontroller_597',['load_controller',['../classcontroller__manager_1_1ControllerManager.html#a937d1b45f0e3874f08de67c5cd145910',1,'controller_manager::ControllerManager']]],
   ['load_5furdf_598',['load_urdf',['../classhardware__interface_1_1ResourceManager.html#a0b2178b1349277b3cce3805ff8ed2003',1,'hardware_interface::ResourceManager']]],
   ['lock_599',['lock',['../classrealtime__tools_1_1RealtimePublisher.html#ac9a8f5aa2cc9a0b9bded10f71ec55cfd',1,'realtime_tools::RealtimePublisher']]],
-  ['lock_5fmemory_600',['lock_memory',['../namespacerealtime__tools.html#ab6e8b5ed308b76258690bc84b6ccb003',1,'realtime_tools']]]
+  ['lock_5fmemory_600',['lock_memory',['../namespacerealtime__tools.html#ab6e8b5ed308b76258690bc84b6ccb003',1,'realtime_tools::lock_memory(std::string &amp;message)'],['../namespacerealtime__tools.html#aeae92aead96ba3906e1a10282395ebaf',1,'realtime_tools::lock_memory()']]]
 ];
