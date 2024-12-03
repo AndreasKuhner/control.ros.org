@@ -174,7 +174,8 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section note"><dt>Note</dt><dd>If max_* values are NAN, the respective limit is deactivated If min_* values are NAN (unspecified), defaults to -max If min_first_derivative_pos/max_first_derivative_neg values are NAN, symmetric limits are used </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If max_* values are NAN, the respective limit is deactivated If min_* values are NAN (unspecified), defaults to -max If min_first_derivative_pos/max_first_derivative_neg values are NAN, symmetric limits are used</dd></dl>
+<p>Disclaimer about the jerk limits: The jerk limit is only applied when accelerating or reverse_accelerating (i.e., "sign(jerk * accel) &gt; 0"). This condition prevents oscillating closed-loop behavior, see discussion details in <a href="https://github.com/ros-controls/control_toolbox/issues/240">https://github.com/ros-controls/control_toolbox/issues/240</a>. if you use this feature, you should perform a test to check that the behavior is really as you expect. </p>
 
 </div>
 </div>
@@ -332,6 +333,7 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Limiting factor (1.0 if none) </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="http://en.wikipedia.org/wiki/jerk_%28physics%29#Motion_control">http://en.wikipedia.org/wiki/jerk_%28physics%29#Motion_control</a> </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The jerk limit is only applied when accelerating or reverse_accelerating (i.e., "sign(jerk * accel) &gt; 0"). </dd></dl>
 
 </div>
 </div>
