@@ -179,29 +179,6 @@ All joints defined in the <code class="docutils literal notranslate"><span class
 <section id="parameters">
 <h2>Parameters<a class="headerlink" href="#parameters" title="Link to this heading"></a></h2>
 <dl class="simple">
-<dt>hardware_components_initial_state</dt><dd><p>Map of parameters for controlled lifecycle management of hardware components.
-The names of the components are defined as attribute of <code class="docutils literal notranslate"><span class="pre">&lt;ros2_control&gt;</span></code>-tag in <code class="docutils literal notranslate"><span class="pre">robot_description</span></code>.
-Hardware components found in <code class="docutils literal notranslate"><span class="pre">robot_description</span></code>, but without explicit state definition will be immediately activated.
-Detailed explanation of each parameter is given below.
-The full structure of the map is given in the following example:</p>
-</dd>
-</dl>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">hardware_components_initial_state</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">unconfigured</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;arm1&quot;</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;arm2&quot;</span>
-<span class="w">  </span><span class="nt">inactive</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;base3&quot;</span>
-</pre></div>
-</div>
-<dl class="simple">
-<dt>hardware_components_initial_state.unconfigured (optional; list&lt;string&gt;; default: empty)</dt><dd><p>Defines which hardware components will be only loaded immediately when controller manager is started.</p>
-</dd>
-<dt>hardware_components_initial_state.inactive (optional; list&lt;string&gt;; default: empty)</dt><dd><p>Defines which hardware components will be configured immediately when controller manager is started.</p>
-</dd>
-<dt>update_rate (mandatory; integer)</dt><dd><p>The frequency of controller manager’s real-time update loop.
-This loop reads states from hardware, updates controller and writes commands to hardware.</p>
-</dd>
 <dt>&lt;controller_name&gt;.type</dt><dd><p>Name of a plugin exported using <code class="docutils literal notranslate"><span class="pre">pluginlib</span></code> for a controller.
 This is a class from which controller’s instance with name “<code class="docutils literal notranslate"><span class="pre">controller_name</span></code>” is created.</p>
 </dd>
@@ -216,6 +193,190 @@ It is recommended to add all the controllers needed for the fallback strategy to
 <p class="admonition-title">Warning</p>
 <p>The fallback controllers activation is subject to the availability of the state and command interfaces at the time of activation.
 It is recommended to test the fallback strategy in simulation before deploying it on the real robot.</p>
+</div>
+<dl>
+<dt>update_rate (int)</dt><dd><p>The frequency of controller manager’s real-time update loop. This loop reads states from hardware, updates controllers and writes commands to hardware.</p>
+<p>Read only: True</p>
+<p>Default:  100</p>
+</dd>
+<dt>hardware_components_initial_state</dt><dd><p>Map of parameters for controlled lifecycle management of hardware components.
+The names of the components are defined as attribute of <code class="docutils literal notranslate"><span class="pre">&lt;ros2_control&gt;</span></code>-tag in <code class="docutils literal notranslate"><span class="pre">robot_description</span></code>.
+Hardware components found in <code class="docutils literal notranslate"><span class="pre">robot_description</span></code>, but without explicit state definition will be immediately activated.
+Detailed explanation of each parameter is given below.
+The full structure of the map is given in the following example:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">hardware_components_initial_state</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">unconfigured</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;arm1&quot;</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;arm2&quot;</span>
+<span class="w">  </span><span class="nt">inactive</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;base3&quot;</span>
+</pre></div>
+</div>
+</dd>
+<dt>hardware_components_initial_state.unconfigured (string_array)</dt><dd><p>Defines which hardware components will be only loaded when controller manager is started. These hardware components will need to be configured and activated manually or via a hardware spawner.</p>
+<p>Default:  {}</p>
+<p>Constraints:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>contains no duplicates</p></li>
+</ul>
+</div></blockquote>
+</dd>
+<dt>hardware_components_initial_state.inactive (string_array)</dt><dd><p>Defines which hardware components will be configured when controller manager is started. These hardware components will need to be activated manually or via a hardware spawner.</p>
+<p>Default:  {}</p>
+<p>Constraints:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>contains no duplicates</p></li>
+</ul>
+</div></blockquote>
+</dd>
+<dt>diagnostics.threshold.controllers.execution_time</dt><dd><p>The <code class="docutils literal notranslate"><span class="pre">execution_time</span></code> diagnostics will be published for all controllers. The <code class="docutils literal notranslate"><span class="pre">mean_error</span></code> for a synchronous controller will be computed against zero, as it should be as low as possible. However, the <code class="docutils literal notranslate"><span class="pre">mean_error</span></code> for an asynchronous controller will be computed against the controller’s desired update period, as the controller can take a maximum of the desired period cycle to execute it’s update cycle.</p>
+</dd>
+<dt>diagnostics.threshold.controllers.periodicity</dt><dd><p>The <code class="docutils literal notranslate"><span class="pre">periodicity</span></code> diagnostics will be published only for the asynchronous controllers, because any affect to the synchronous controllers will be reflected directly in the controller manager’s periodicity.</p>
+</dd>
+<dt>diagnostics.threshold.controller_manager.periodicity.mean_error.warn (double)</dt><dd><p>The warning threshold for the mean error of the controller manager’s periodicity. If the mean error exceeds this threshold, a warning diagnostic will be published.</p>
+<p>Default:  5.0</p>
+<p>Constraints:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>greater than 0.0</p></li>
+</ul>
+</div></blockquote>
+</dd>
+<dt>diagnostics.threshold.controller_manager.periodicity.mean_error.error (double)</dt><dd><p>The error threshold for the mean error of the controller manager’s periodicity. If the mean error exceeds this threshold, an error diagnostic will be published.</p>
+<p>Default:  10.0</p>
+<p>Constraints:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>greater than 0.0</p></li>
+</ul>
+</div></blockquote>
+</dd>
+<dt>diagnostics.threshold.controller_manager.periodicity.standard_deviation.warn (double)</dt><dd><p>The warning threshold for the standard deviation of the controller manager’s periodicity. If the standard deviation exceeds this threshold, a warning diagnostic will be published.</p>
+<p>Default:  5.0</p>
+<p>Constraints:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>greater than 0.0</p></li>
+</ul>
+</div></blockquote>
+</dd>
+<dt>diagnostics.threshold.controller_manager.periodicity.standard_deviation.error (double)</dt><dd><p>The error threshold for the standard deviation of the controller manager’s periodicity. If the standard deviation exceeds this threshold, an error diagnostic will be published.</p>
+<p>Default:  10.0</p>
+<p>Constraints:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>greater than 0.0</p></li>
+</ul>
+</div></blockquote>
+</dd>
+<dt>diagnostics.threshold.controllers.periodicity.mean_error.warn (double)</dt><dd><p>The warning threshold for the mean error of the controller update loop. If the mean error exceeds this threshold, a warning diagnostic will be published. This diagnostics will be published only for the asynchronous controllers, because any affect to the synchronous controllers will be reflected directly in the controller manager’s periodicity.</p>
+<p>Default:  5.0</p>
+<p>Constraints:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>greater than 0.0</p></li>
+</ul>
+</div></blockquote>
+</dd>
+<dt>diagnostics.threshold.controllers.periodicity.mean_error.error (double)</dt><dd><p>The error threshold for the mean error of the controller update loop. If the mean error exceeds this threshold, an error diagnostic will be published. This diagnostics will be published only for the asynchronous controllers, because any affect to the synchronous controllers will be reflected directly in the controller manager’s periodicity.</p>
+<p>Default:  10.0</p>
+<p>Constraints:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>greater than 0.0</p></li>
+</ul>
+</div></blockquote>
+</dd>
+<dt>diagnostics.threshold.controllers.periodicity.standard_deviation.warn (double)</dt><dd><p>The warning threshold for the standard deviation of the controller update loop. If the standard deviation exceeds this threshold, a warning diagnostic will be published. This diagnostics will be published only for the asynchronous controllers, because any affect to the synchronous controllers will be reflected directly in the controller manager’s periodicity.</p>
+<p>Default:  5.0</p>
+<p>Constraints:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>greater than 0.0</p></li>
+</ul>
+</div></blockquote>
+</dd>
+<dt>diagnostics.threshold.controllers.periodicity.standard_deviation.error (double)</dt><dd><p>The error threshold for the standard deviation of the controller update loop. If the standard deviation exceeds this threshold, an error diagnostic will be published. This diagnostics will be published only for the asynchronous controllers, because any affect to the synchronous controllers will be reflected directly in the controller manager’s periodicity.</p>
+<p>Default:  10.0</p>
+<p>Constraints:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>greater than 0.0</p></li>
+</ul>
+</div></blockquote>
+</dd>
+<dt>diagnostics.threshold.controllers.execution_time.mean_error.warn (double)</dt><dd><p>The warning threshold for the mean error of the controller’s update cycle execution time in microseconds. If the mean error exceeds this threshold, a warning diagnostic will be published. The <code class="docutils literal notranslate"><span class="pre">mean_error</span></code> for a synchronous controller will be computed against zero, as it should be as low as possible. However, the <code class="docutils literal notranslate"><span class="pre">mean_error</span></code> for an asynchronous controller will be computed against the controller’s desired update period, as the controller can take a maximum of the desired period cycle to execute it’s update cycle</p>
+<p>Default:  1000.0</p>
+<p>Constraints:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>greater than 0.0</p></li>
+</ul>
+</div></blockquote>
+</dd>
+<dt>diagnostics.threshold.controllers.execution_time.mean_error.error (double)</dt><dd><p>The error threshold for the mean error of the controller’s update cycle execution time in microseconds. If the mean error exceeds this threshold, an error diagnostic will be published. The <code class="docutils literal notranslate"><span class="pre">mean_error</span></code> for a synchronous controller will be computed against zero, as it should be as low as possible. However, the <code class="docutils literal notranslate"><span class="pre">mean_error</span></code> for an asynchronous controller will be computed against the controller’s desired update period, as the controller can take a maximum of the desired period cycle to execute it’s update cycle</p>
+<p>Default:  2000.0</p>
+<p>Constraints:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>greater than 0.0</p></li>
+</ul>
+</div></blockquote>
+</dd>
+<dt>diagnostics.threshold.controllers.execution_time.standard_deviation.warn (double)</dt><dd><p>The warning threshold for the standard deviation of the controller’s update cycle execution time. If the standard deviation exceeds this threshold, a warning diagnostic will be published.</p>
+<p>Default:  100.0</p>
+<p>Constraints:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>greater than 0.0</p></li>
+</ul>
+</div></blockquote>
+</dd>
+<dt>diagnostics.threshold.controllers.execution_time.standard_deviation.error (double)</dt><dd><p>The error threshold for the standard deviation of the controller’s update cycle execution time. If the standard deviation exceeds this threshold, an error diagnostic will be published.</p>
+<p>Default:  200.0</p>
+<p>Constraints:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>greater than 0.0</p></li>
+</ul>
+</div></blockquote>
+</dd>
+</dl>
+<p><strong>An example parameter file:</strong></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">controller_manager</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">ros__parameters</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">diagnostics</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">threshold</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">controller_manager</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">periodicity</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">mean_error</span><span class="p">:</span>
+<span class="w">              </span><span class="nt">error</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.0</span>
+<span class="w">              </span><span class="nt">warn</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.0</span>
+<span class="w">            </span><span class="nt">standard_deviation</span><span class="p">:</span>
+<span class="w">              </span><span class="nt">error</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.0</span>
+<span class="w">              </span><span class="nt">warn</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.0</span>
+<span class="w">        </span><span class="nt">controllers</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">execution_time</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">mean_error</span><span class="p">:</span>
+<span class="w">              </span><span class="nt">error</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2000.0</span>
+<span class="w">              </span><span class="nt">warn</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000.0</span>
+<span class="w">            </span><span class="nt">standard_deviation</span><span class="p">:</span>
+<span class="w">              </span><span class="nt">error</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">200.0</span>
+<span class="w">              </span><span class="nt">warn</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100.0</span>
+<span class="w">          </span><span class="nt">periodicity</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">mean_error</span><span class="p">:</span>
+<span class="w">              </span><span class="nt">error</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.0</span>
+<span class="w">              </span><span class="nt">warn</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.0</span>
+<span class="w">            </span><span class="nt">standard_deviation</span><span class="p">:</span>
+<span class="w">              </span><span class="nt">error</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.0</span>
+<span class="w">              </span><span class="nt">warn</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.0</span>
+<span class="w">    </span><span class="nt">hardware_components_initial_state</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">inactive</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;{}&#39;</span>
+<span class="w">      </span><span class="nt">unconfigured</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;{}&#39;</span>
+<span class="w">    </span><span class="nt">update_rate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100.0</span>
+</pre></div>
 </div>
 <section id="handling-multiple-controller-managers">
 <h3>Handling Multiple Controller Managers<a class="headerlink" href="#handling-multiple-controller-managers" title="Link to this heading"></a></h3>
