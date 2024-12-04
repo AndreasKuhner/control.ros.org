@@ -75,7 +75,6 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classros2__control__demo__example__7_1_1RobotSystem-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">ros2_control_demo_example_7::RobotSystem Class Reference</div>  </div>
@@ -108,12 +107,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afe0eeebc199ec3719361a0c2bddd7b28"><td class="memItemLeft" align="right" valign="top">CallbackReturn&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classros2__control__demo__example__7_1_1RobotSystem.html#afe0eeebc199ec3719361a0c2bddd7b28">on_init</a> (const <a class="el" href="structhardware__interface_1_1HardwareInfo.html">hardware_interface::HardwareInfo</a> &amp;info) override</td></tr>
 <tr class="memdesc:afe0eeebc199ec3719361a0c2bddd7b28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialization of the hardware interface from data parsed from the robot's URDF.  <a href="classros2__control__demo__example__7_1_1RobotSystem.html#afe0eeebc199ec3719361a0c2bddd7b28">More...</a><br /></td></tr>
 <tr class="separator:afe0eeebc199ec3719361a0c2bddd7b28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53b99ee624e83990eeaf9f315eece167"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classhardware__interface_1_1StateInterface.html">hardware_interface::StateInterface</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classros2__control__demo__example__7_1_1RobotSystem.html#a53b99ee624e83990eeaf9f315eece167">export_state_interfaces</a> () override</td></tr>
-<tr class="memdesc:a53b99ee624e83990eeaf9f315eece167"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exports all state interfaces for this hardware interface.  <a href="classros2__control__demo__example__7_1_1RobotSystem.html#a53b99ee624e83990eeaf9f315eece167">More...</a><br /></td></tr>
-<tr class="separator:a53b99ee624e83990eeaf9f315eece167"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e7e699addfbd662edd72852035d02bb"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classhardware__interface_1_1CommandInterface.html">hardware_interface::CommandInterface</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classros2__control__demo__example__7_1_1RobotSystem.html#a2e7e699addfbd662edd72852035d02bb">export_command_interfaces</a> () override</td></tr>
-<tr class="memdesc:a2e7e699addfbd662edd72852035d02bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exports all command interfaces for this hardware interface.  <a href="classros2__control__demo__example__7_1_1RobotSystem.html#a2e7e699addfbd662edd72852035d02bb">More...</a><br /></td></tr>
-<tr class="separator:a2e7e699addfbd662edd72852035d02bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28e7d7666dc1fcca36025a3e32de4608"><td class="memItemLeft" align="right" valign="top"><a id="a28e7d7666dc1fcca36025a3e32de4608"></a>
+CallbackReturn&#160;</td><td class="memItemRight" valign="bottom"><b>on_configure</b> (const rclcpp_lifecycle::State &amp;previous_state) override</td></tr>
+<tr class="separator:a28e7d7666dc1fcca36025a3e32de4608"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a121cfb3e161f654dc91e9d829a7e794d"><td class="memItemLeft" align="right" valign="top">return_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classros2__control__demo__example__7_1_1RobotSystem.html#a121cfb3e161f654dc91e9d829a7e794d">read</a> (const rclcpp::Time &amp;time, const rclcpp::Duration &amp;period) override</td></tr>
 <tr class="memdesc:a121cfb3e161f654dc91e9d829a7e794d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the current state values from the actuator.  <a href="classros2__control__demo__example__7_1_1RobotSystem.html#a121cfb3e161f654dc91e9d829a7e794d">More...</a><br /></td></tr>
 <tr class="separator:a121cfb3e161f654dc91e9d829a7e794d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -129,10 +125,16 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a2c479dbc6d2330c193ef4b2eea981845 inherit pub_methods_classhardware__interface_1_1SystemInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac82a8ae30bd960b4fe24805d4451398a inherit pub_methods_classhardware__interface_1_1SystemInterface"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacehardware__interface.html#af127ad1f7288042a450a4e783e44cf5c">CallbackReturn</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1SystemInterface.html#ac82a8ae30bd960b4fe24805d4451398a">init</a> (const <a class="el" href="structhardware__interface_1_1HardwareInfo.html">HardwareInfo</a> &amp;hardware_info, rclcpp::Logger logger, rclcpp::node_interfaces::NodeClockInterface::SharedPtr clock_interface)</td></tr>
 <tr class="separator:ac82a8ae30bd960b4fe24805d4451398a inherit pub_methods_classhardware__interface_1_1SystemInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcde86d62a3643d198abf785f3c48cfd inherit pub_methods_classhardware__interface_1_1SystemInterface"><td class="memItemLeft" align="right" valign="top">virtual std::vector&lt; <a class="el" href="classhardware__interface_1_1StateInterface.html">StateInterface</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1SystemInterface.html#adcde86d62a3643d198abf785f3c48cfd">export_state_interfaces</a> ()</td></tr>
+<tr class="memdesc:adcde86d62a3643d198abf785f3c48cfd inherit pub_methods_classhardware__interface_1_1SystemInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exports all state interfaces for this hardware interface.  <a href="classhardware__interface_1_1SystemInterface.html#adcde86d62a3643d198abf785f3c48cfd">More...</a><br /></td></tr>
+<tr class="separator:adcde86d62a3643d198abf785f3c48cfd inherit pub_methods_classhardware__interface_1_1SystemInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1694f17315921fc0e4ee5f347a99730b inherit pub_methods_classhardware__interface_1_1SystemInterface"><td class="memItemLeft" align="right" valign="top">virtual std::vector&lt; <a class="el" href="structhardware__interface_1_1InterfaceDescription.html">hardware_interface::InterfaceDescription</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1SystemInterface.html#a1694f17315921fc0e4ee5f347a99730b">export_unlisted_state_interface_descriptions</a> ()</td></tr>
 <tr class="separator:a1694f17315921fc0e4ee5f347a99730b inherit pub_methods_classhardware__interface_1_1SystemInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada59268806548721d8071bdd32679d6b inherit pub_methods_classhardware__interface_1_1SystemInterface"><td class="memItemLeft" align="right" valign="top">virtual std::vector&lt; StateInterface::ConstSharedPtr &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1SystemInterface.html#ada59268806548721d8071bdd32679d6b">on_export_state_interfaces</a> ()</td></tr>
 <tr class="separator:ada59268806548721d8071bdd32679d6b inherit pub_methods_classhardware__interface_1_1SystemInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a189df71549081ceac0f66638ef4790cc inherit pub_methods_classhardware__interface_1_1SystemInterface"><td class="memItemLeft" align="right" valign="top">virtual std::vector&lt; <a class="el" href="classhardware__interface_1_1CommandInterface.html">CommandInterface</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1SystemInterface.html#a189df71549081ceac0f66638ef4790cc">export_command_interfaces</a> ()</td></tr>
+<tr class="memdesc:a189df71549081ceac0f66638ef4790cc inherit pub_methods_classhardware__interface_1_1SystemInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exports all command interfaces for this hardware interface.  <a href="classhardware__interface_1_1SystemInterface.html#a189df71549081ceac0f66638ef4790cc">More...</a><br /></td></tr>
+<tr class="separator:a189df71549081ceac0f66638ef4790cc inherit pub_methods_classhardware__interface_1_1SystemInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec956ab243f41ddb555cce5b9f06b770 inherit pub_methods_classhardware__interface_1_1SystemInterface"><td class="memItemLeft" align="right" valign="top">virtual std::vector&lt; <a class="el" href="structhardware__interface_1_1InterfaceDescription.html">hardware_interface::InterfaceDescription</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1SystemInterface.html#aec956ab243f41ddb555cce5b9f06b770">export_unlisted_command_interface_descriptions</a> ()</td></tr>
 <tr class="separator:aec956ab243f41ddb555cce5b9f06b770 inherit pub_methods_classhardware__interface_1_1SystemInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1edc6b6ae4adb6150780ad709d0572e1 inherit pub_methods_classhardware__interface_1_1SystemInterface"><td class="memItemLeft" align="right" valign="top">virtual std::vector&lt; CommandInterface::SharedPtr &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1SystemInterface.html#a1edc6b6ae4adb6150780ad709d0572e1">on_export_command_interfaces</a> ()</td></tr>
@@ -176,29 +178,8 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>get_command</b> (co
 <tr class="memdesc:aa8f66c109598e59f8fa51d33b7cf56c7 inherit pub_methods_classhardware__interface_1_1SystemInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the hardware info of the <a class="el" href="classhardware__interface_1_1SystemInterface.html">SystemInterface</a>.  <a href="classhardware__interface_1_1SystemInterface.html#aa8f66c109598e59f8fa51d33b7cf56c7">More...</a><br /></td></tr>
 <tr class="separator:aa8f66c109598e59f8fa51d33b7cf56c7 inherit pub_methods_classhardware__interface_1_1SystemInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
-<tr class="memitem:aa54bd5edf8c5f90b4022c5a6b5e26444"><td class="memItemLeft" align="right" valign="top"><a id="aa54bd5edf8c5f90b4022c5a6b5e26444"></a>
-std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classros2__control__demo__example__7_1_1RobotSystem.html#aa54bd5edf8c5f90b4022c5a6b5e26444">joint_position_command_</a></td></tr>
-<tr class="memdesc:aa54bd5edf8c5f90b4022c5a6b5e26444"><td class="mdescLeft">&#160;</td><td class="mdescRight">The size of this vector is (standard_interfaces_.size() x nr_joints) <br /></td></tr>
-<tr class="separator:aa54bd5edf8c5f90b4022c5a6b5e26444"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e0aa3d6af988b87b7578ffae6d55fa5"><td class="memItemLeft" align="right" valign="top"><a id="a2e0aa3d6af988b87b7578ffae6d55fa5"></a>
-std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>joint_velocities_command_</b></td></tr>
-<tr class="separator:a2e0aa3d6af988b87b7578ffae6d55fa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af0c787887edd3e499c6745715257aa17"><td class="memItemLeft" align="right" valign="top"><a id="af0c787887edd3e499c6745715257aa17"></a>
-std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>joint_position_</b></td></tr>
-<tr class="separator:af0c787887edd3e499c6745715257aa17"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad71d50f4283bd0c3973f90cb2f9659a1"><td class="memItemLeft" align="right" valign="top"><a id="ad71d50f4283bd0c3973f90cb2f9659a1"></a>
-std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>joint_velocities_</b></td></tr>
-<tr class="separator:ad71d50f4283bd0c3973f90cb2f9659a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa7891dd40586271c7881e62974db81fb"><td class="memItemLeft" align="right" valign="top"><a id="aa7891dd40586271c7881e62974db81fb"></a>
-std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>ft_states_</b></td></tr>
-<tr class="separator:aa7891dd40586271c7881e62974db81fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a08c7ee67928527faf02f4636cae8b1"><td class="memItemLeft" align="right" valign="top"><a id="a8a08c7ee67928527faf02f4636cae8b1"></a>
-std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>ft_command_</b></td></tr>
-<tr class="separator:a8a08c7ee67928527faf02f4636cae8b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77bd6d0c3445c4f8c9f647f99a947da4"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, std::vector&lt; std::string &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>joint_interfaces</b></td></tr>
-<tr class="separator:a77bd6d0c3445c4f8c9f647f99a947da4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_classhardware__interface_1_1SystemInterface"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classhardware__interface_1_1SystemInterface')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classhardware__interface_1_1SystemInterface.html">hardware_interface::SystemInterface</a></td></tr>
 <tr class="memitem:a8614be4ed58eac9c0c5f8ba096454550 inherit pro_attribs_classhardware__interface_1_1SystemInterface"><td class="memItemLeft" align="right" valign="top"><a id="a8614be4ed58eac9c0c5f8ba096454550"></a>
 <a class="el" href="structhardware__interface_1_1HardwareInfo.html">HardwareInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><b>info_</b></td></tr>
@@ -250,70 +231,6 @@ std::vector&lt; CommandInterface::SharedPtr &gt;&#160;</td><td class="memItemRig
 <tr class="separator:a2b0671e8693ddef6fa3ed8b028bfd2dd inherit pro_attribs_classhardware__interface_1_1SystemInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a2e7e699addfbd662edd72852035d02bb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2e7e699addfbd662edd72852035d02bb">&#9670;&nbsp;</a></span>export_command_interfaces()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt; <a class="el" href="classhardware__interface_1_1CommandInterface.html">hardware_interface::CommandInterface</a> &gt; ros2_control_demo_example_7::RobotSystem::export_command_interfaces </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Exports all command interfaces for this hardware interface. </p>
-<p>Old way of exporting the CommandInterfaces. If a empty vector is returned then the <a class="el" href="classhardware__interface_1_1SystemInterface.html#a1edc6b6ae4adb6150780ad709d0572e1">on_export_command_interfaces()</a> method is called. If a vector with CommandInterfaces is returned then the exporting of the CommandInterfaces is only done with this function and the ownership is transferred to the resource manager. The set_command(...), get_command(...), ..., can then not be used.</p>
-<p>Note the ownership over the state interfaces is transferred to the caller.</p>
-<dl class="section return"><dt>Returns</dt><dd>vector of state interfaces </dd></dl>
-
-<p>Reimplemented from <a class="el" href="classhardware__interface_1_1SystemInterface.html#a189df71549081ceac0f66638ef4790cc">hardware_interface::SystemInterface</a>.</p>
-
-</div>
-</div>
-<a id="a53b99ee624e83990eeaf9f315eece167"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a53b99ee624e83990eeaf9f315eece167">&#9670;&nbsp;</a></span>export_state_interfaces()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt; <a class="el" href="classhardware__interface_1_1StateInterface.html">hardware_interface::StateInterface</a> &gt; ros2_control_demo_example_7::RobotSystem::export_state_interfaces </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Exports all state interfaces for this hardware interface. </p>
-<p>Old way of exporting the StateInterfaces. If a empty vector is returned then the <a class="el" href="classhardware__interface_1_1SystemInterface.html#ada59268806548721d8071bdd32679d6b">on_export_state_interfaces()</a> method is called. If a vector with StateInterfaces is returned then the exporting of the StateInterfaces is only done with this function and the ownership is transferred to the resource manager. The set_command(...), get_command(...), ..., can then not be used.</p>
-<p>Note the ownership over the state interfaces is transferred to the caller.</p>
-<dl class="section return"><dt>Returns</dt><dd>vector of state interfaces </dd></dl>
-
-<p>Reimplemented from <a class="el" href="classhardware__interface_1_1SystemInterface.html#adcde86d62a3643d198abf785f3c48cfd">hardware_interface::SystemInterface</a>.</p>
-
-</div>
-</div>
 <a id="afe0eeebc199ec3719361a0c2bddd7b28"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afe0eeebc199ec3719361a0c2bddd7b28">&#9670;&nbsp;</a></span>on_init()</h2>
 
@@ -449,31 +366,6 @@ CallbackReturn::ERROR if any error happens or data are missing. </dd></dl>
 
 <p>Implements <a class="el" href="classhardware__interface_1_1SystemInterface.html#af50333e4b0b30c9a1d66f296a33a5d8d">hardware_interface::SystemInterface</a>.</p>
 
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a77bd6d0c3445c4f8c9f647f99a947da4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a77bd6d0c3445c4f8c9f647f99a947da4">&#9670;&nbsp;</a></span>joint_interfaces</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::unordered_map&lt;std::string, std::vector&lt;std::string&gt; &gt; ros2_control_demo_example_7::RobotSystem::joint_interfaces</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">    {<span class="stringliteral">&quot;position&quot;</span>, {}}, {<span class="stringliteral">&quot;velocity&quot;</span>, {}}}</div>
-</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>

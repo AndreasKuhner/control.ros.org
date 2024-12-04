@@ -610,7 +610,7 @@ This occurs whether the Nodes are siblings or exist in a hierarchy.</p>
 </div>
 <p>The ros2_control_node executable uses the following parameters from the <code class="docutils literal notranslate"><span class="pre">controller_manager</span></code> node:</p>
 <dl class="simple">
-<dt>lock_memory (optional; bool; default: false)</dt><dd><p>Locks the memory of the <code class="docutils literal notranslate"><span class="pre">controller_manager</span></code> node at startup to physical RAM in order to avoid page faults
+<dt>lock_memory (optional; bool; default: false for a non-realtime kernel, true for a realtime kernel)</dt><dd><p>Locks the memory of the <code class="docutils literal notranslate"><span class="pre">controller_manager</span></code> node at startup to physical RAM in order to avoid page faults
 and to prevent the node from being swapped out to disk.
 Find more information about the setup for memory locking in the following link : <a class="reference external" href="https://access.redhat.com/solutions/61334">How to set ulimit values</a>
 The following command can be used to set the memory locking limit temporarily : <code class="docutils literal notranslate"><span class="pre">ulimit</span> <span class="pre">-l</span> <span class="pre">unlimited</span></code>.</p>
@@ -678,6 +678,7 @@ Likewise, if a controller returns <code class="docutils literal notranslate"><sp
   <div class="rst-other-versions">
     <dl>
       <dt>Releases</dt>
+        <dd><a href="../../../../../jazzy/doc/ros2_control/controller_manager/doc/userdoc.html">Jazzy (latest)</a></dd><br>
         <dd><a href="../../../../../iron/doc/ros2_control/controller_manager/doc/userdoc.html">Iron (EOL)</a></dd><br>
         
         <dd><a href="../../../../../humble/doc/ros2_control/controller_manager/doc/userdoc.html">Humble</a></dd><br>
@@ -689,7 +690,6 @@ Likewise, if a controller returns <code class="docutils literal notranslate"><sp
     <dl>
       <dt>In Development</dt>
       <dd><a href="userdoc.html">Rolling</a></dd>
-      <dd><a href="../../../../../jazzy/doc/ros2_control/controller_manager/doc/userdoc.html">Jazzy</a></dd>
     </dl>
   </div>
 </div><script>

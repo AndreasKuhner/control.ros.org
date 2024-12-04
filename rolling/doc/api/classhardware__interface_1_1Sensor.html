@@ -122,12 +122,18 @@ HARDWARE_INTERFACE_PUBLIC std::string&#160;</td><td class="memItemRight" valign=
 <tr class="memitem:a3fcef4ca705e7af9afcd25dea042c60b"><td class="memItemLeft" align="right" valign="top"><a id="a3fcef4ca705e7af9afcd25dea042c60b"></a>
 HARDWARE_INTERFACE_PUBLIC const rclcpp_lifecycle::State &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>get_lifecycle_state</b> () const</td></tr>
 <tr class="separator:a3fcef4ca705e7af9afcd25dea042c60b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a280816848d3e8834bd46fba813a5d50f"><td class="memItemLeft" align="right" valign="top"><a id="a280816848d3e8834bd46fba813a5d50f"></a>
+HARDWARE_INTERFACE_PUBLIC const rclcpp::Time &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>get_last_read_time</b> () const</td></tr>
+<tr class="separator:a280816848d3e8834bd46fba813a5d50f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a300026e9b7736f990c648f3577a09e76"><td class="memItemLeft" align="right" valign="top"><a id="a300026e9b7736f990c648f3577a09e76"></a>
 HARDWARE_INTERFACE_PUBLIC return_type&#160;</td><td class="memItemRight" valign="bottom"><b>read</b> (const rclcpp::Time &amp;time, const rclcpp::Duration &amp;period)</td></tr>
 <tr class="separator:a300026e9b7736f990c648f3577a09e76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa87edb2c5b947274401dc63a8739ec32"><td class="memItemLeft" align="right" valign="top"><a id="aa87edb2c5b947274401dc63a8739ec32"></a>
 HARDWARE_INTERFACE_PUBLIC return_type&#160;</td><td class="memItemRight" valign="bottom"><b>write</b> (const rclcpp::Time &amp;, const rclcpp::Duration &amp;)</td></tr>
 <tr class="separator:aa87edb2c5b947274401dc63a8739ec32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dccf1ef80f2f8565be33772bf7822f4"><td class="memItemLeft" align="right" valign="top"><a id="a0dccf1ef80f2f8565be33772bf7822f4"></a>
+HARDWARE_INTERFACE_PUBLIC std::recursive_mutex &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>get_mutex</b> ()</td></tr>
+<tr class="separator:a0dccf1ef80f2f8565be33772bf7822f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>ros2_control/hardware_interface/include/hardware_interface/<a class="el" href="sensor_8hpp_source.html">sensor.hpp</a></li>

@@ -131,12 +131,21 @@ HARDWARE_INTERFACE_PUBLIC std::string&#160;</td><td class="memItemRight" valign=
 <tr class="memitem:a3cf85f75db39a62248a239b3ad377709"><td class="memItemLeft" align="right" valign="top"><a id="a3cf85f75db39a62248a239b3ad377709"></a>
 HARDWARE_INTERFACE_PUBLIC const rclcpp_lifecycle::State &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>get_lifecycle_state</b> () const</td></tr>
 <tr class="separator:a3cf85f75db39a62248a239b3ad377709"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae432a53eddb44a7efec628595f1a013f"><td class="memItemLeft" align="right" valign="top"><a id="ae432a53eddb44a7efec628595f1a013f"></a>
+HARDWARE_INTERFACE_PUBLIC const rclcpp::Time &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>get_last_read_time</b> () const</td></tr>
+<tr class="separator:ae432a53eddb44a7efec628595f1a013f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e5567426f3385f8aba78987ea96c52b"><td class="memItemLeft" align="right" valign="top"><a id="a3e5567426f3385f8aba78987ea96c52b"></a>
+HARDWARE_INTERFACE_PUBLIC const rclcpp::Time &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>get_last_write_time</b> () const</td></tr>
+<tr class="separator:a3e5567426f3385f8aba78987ea96c52b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf95c371d07f5c9496ba62df5a7d9281"><td class="memItemLeft" align="right" valign="top"><a id="acf95c371d07f5c9496ba62df5a7d9281"></a>
 HARDWARE_INTERFACE_PUBLIC return_type&#160;</td><td class="memItemRight" valign="bottom"><b>read</b> (const rclcpp::Time &amp;time, const rclcpp::Duration &amp;period)</td></tr>
 <tr class="separator:acf95c371d07f5c9496ba62df5a7d9281"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b436136292130d647443a30a42c1f06"><td class="memItemLeft" align="right" valign="top"><a id="a6b436136292130d647443a30a42c1f06"></a>
 HARDWARE_INTERFACE_PUBLIC return_type&#160;</td><td class="memItemRight" valign="bottom"><b>write</b> (const rclcpp::Time &amp;time, const rclcpp::Duration &amp;period)</td></tr>
 <tr class="separator:a6b436136292130d647443a30a42c1f06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb48f76ce0630d6426eee48d356c01f3"><td class="memItemLeft" align="right" valign="top"><a id="adb48f76ce0630d6426eee48d356c01f3"></a>
+HARDWARE_INTERFACE_PUBLIC std::recursive_mutex &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>get_mutex</b> ()</td></tr>
+<tr class="separator:adb48f76ce0630d6426eee48d356c01f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>ros2_control/hardware_interface/include/hardware_interface/<a class="el" href="system_8hpp_source.html">system.hpp</a></li>
