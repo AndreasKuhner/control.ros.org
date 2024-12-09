@@ -132,7 +132,7 @@ $(function() {
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">const</span> std::string &amp; interface_torque_y, <span class="keyword">const</span> std::string &amp; interface_torque_z)</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  : <a class="code" href="classsemantic__components_1_1SemanticComponentInterface.html">SemanticComponentInterface</a>(<span class="stringliteral">&quot;&quot;</span>, 6)</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">auto</span> check_and_add_interface = [<span class="keyword">this</span>](<span class="keyword">const</span> std::string &amp; interface_name, <span class="keyword">const</span> <span class="keywordtype">int</span> index)</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">auto</span> check_and_add_interface = [<span class="keyword">this</span>](<span class="keyword">const</span> std::string &amp; interface_name, <span class="keyword">const</span> <span class="keywordtype">size_t</span> index)</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    {</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      <span class="keywordflow">if</span> (!interface_name.empty())</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      {</div>
@@ -180,7 +180,7 @@ $(function() {
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="comment">// find out how many force interfaces are being used</span></div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="comment">// torque interfaces will be found from the next index onward</span></div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keyword">auto</span> torque_interface_counter =</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;      std::count(<a class="code" href="classsemantic__components_1_1ForceTorqueSensor.html#a0f8837c929b2b20222d7ea0bb6236e88">existing_axes_</a>.begin(), <a class="code" href="classsemantic__components_1_1ForceTorqueSensor.html#a0f8837c929b2b20222d7ea0bb6236e88">existing_axes_</a>.begin() + 3, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;      <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(std::count(<a class="code" href="classsemantic__components_1_1ForceTorqueSensor.html#a0f8837c929b2b20222d7ea0bb6236e88">existing_axes_</a>.begin(), <a class="code" href="classsemantic__components_1_1ForceTorqueSensor.html#a0f8837c929b2b20222d7ea0bb6236e88">existing_axes_</a>.begin() + 3, <span class="keyword">true</span>));</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 3; i &lt; 6; ++i)</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    {</div>
