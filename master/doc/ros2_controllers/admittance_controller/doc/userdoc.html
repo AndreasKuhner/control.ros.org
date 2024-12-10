@@ -367,6 +367,8 @@ The controller implements <code class="docutils literal notranslate"><span class
 <dl class="simple">
 <dt>~/joint_references (input topic) [trajectory_msgs::msg::JointTrajectoryPoint]</dt><dd><p>Target joint commands when controller is not in chained mode.</p>
 </dd>
+<dt>~/wrench_reference (input topic) [geometry_msgs::msg::WrenchStamped]</dt><dd><p>Target wrench offset (WrenchStamped has to be in the frame of the FT-sensor).</p>
+</dd>
 <dt>~/state (output topic) [control_msgs::msg::AdmittanceControllerState]</dt><dd><p>Topic publishing internal states.</p>
 </dd>
 </dl>

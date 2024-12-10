@@ -210,8 +210,8 @@ $(function() {
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    }</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    {</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;      <span class="keyword">const</span> <span class="keywordtype">size_t</span> t1_dist = std::distance(t1.begin(), t1_it);</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;      <span class="keyword">const</span> <span class="keywordtype">size_t</span> t2_dist = std::distance(t2.begin(), t2_it);</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;      <span class="keyword">const</span> <span class="keywordtype">size_t</span> t1_dist = <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(std::distance(t1.begin(), t1_it));</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;      <span class="keyword">const</span> <span class="keywordtype">size_t</span> t2_dist = <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(std::distance(t2.begin(), t2_it));</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;      mapping_vector[t1_dist] = t2_dist;</div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    }</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;  }</div>
