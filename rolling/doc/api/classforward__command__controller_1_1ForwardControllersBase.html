@@ -345,7 +345,7 @@ std::vector&lt; <a class="el" href="classhardware__interface_1_1LoanedStateInter
 </div><div class="memdoc">
 
 <p>Get configuration for controller's required state interfaces. </p>
-<p>Method used by the controller_manager to get the set of state interface used by the controller. Each controller can use individual method to determine interface names that in simples case have the following format: <code>&lt;joint&gt;/&lt;interface&gt;</code>. The method is called only in <code>inactive</code> or <code>active</code> state, i.e., <code>on_configure</code> has to be called first. The configuration is used to check if controller can be activated and to claim interfaces from hardware. The claimed interfaces are populated in the state_interface_ member.</p>
+<p>Method used by the controller_manager to get the set of state interface used by the controller. Each controller can use individual method to determine interface names that in simples case have the following format: <code>&lt;joint&gt;/&lt;interface&gt;</code>. The method is called only in <code>inactive</code> or <code>active</code> state, i.e., <code>on_configure</code> has to be called first. The configuration is used to check if controller can be activated and to claim interfaces from hardware. The claimed interfaces are populated in the state_interfaces_ member.</p>
 <dl class="section return"><dt>Returns</dt><dd>configuration of state interfaces. </dd></dl>
 
 <p>Implements <a class="el" href="classcontroller__interface_1_1ControllerInterfaceBase.html#a3417ed9b9990df177ab116f9a7147b74">controller_interface::ControllerInterfaceBase</a>.</p>
